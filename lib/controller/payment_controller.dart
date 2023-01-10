@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
+// import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -17,44 +17,44 @@ class PaymentController extends GetxController {
   String secrit = "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";
   Future<void> makePayment(
       {required BuildContext context,required String amount, required String currency,required int newRentNumber}) async {
-    try {
-      rent_number = newRentNumber;
-      paymentIntentData = await createPaymentIntent(context,amount, currency);
-      if (paymentIntentData != null) {
-        print('Init Payment Sheet Successfully');
-       var result = await Stripe.instance.initPaymentSheet(
-            paymentSheetParameters: SetupPaymentSheetParameters(
-              applePay: PaymentSheetApplePay(merchantCountryCode: "+92"),
-              googlePay: PaymentSheetGooglePay(currencyCode: "UAD",merchantCountryCode: '+92',testEnv: true),
-              style: ThemeMode.dark,
-              merchantDisplayName: 'Prospects',
-              customerId: paymentIntentData!['customer'],
-              paymentIntentClientSecret: paymentIntentData!['client_secret'],
-              customerEphemeralKeySecret: paymentIntentData!['ephemeralKey'],
-            ));
-        await displayPaymentSheet();
-      }else{
-
-      }
-    } catch (e, s) {
-      print('exception:$e$s');
-    }
+    // try {
+    //   rent_number = newRentNumber;
+    //   paymentIntentData = await createPaymentIntent(context,amount, currency);
+    //   if (paymentIntentData != null) {
+    //     print('Init Payment Sheet Successfully');
+    //    var result = await Stripe.instance.initPaymentSheet(
+    //         paymentSheetParameters: SetupPaymentSheetParameters(
+    //           applePay: PaymentSheetApplePay(merchantCountryCode: "+92"),
+    //           googlePay: PaymentSheetGooglePay(currencyCode: "UAD",merchantCountryCode: '+92',testEnv: true),
+    //           style: ThemeMode.dark,
+    //           merchantDisplayName: 'Prospects',
+    //           customerId: paymentIntentData!['customer'],
+    //           paymentIntentClientSecret: paymentIntentData!['client_secret'],
+    //           customerEphemeralKeySecret: paymentIntentData!['ephemeralKey'],
+    //         ));
+    //     await displayPaymentSheet();
+    //   }else{
+    //
+    //   }
+    // } catch (e, s) {
+    //   print('exception:$e$s');
+    // }
   }
 
   displayPaymentSheet() async {
-    try {
-      print('---------------------');
-      await Stripe.instance.presentPaymentSheet();
-      print('---------------------');
-    } on Exception catch (e) {
-      if (e is StripeException) {
-        print("Error from Stripe: ${e.error.localizedMessage}");
-      } else {
-        print("Unforeseen error: ${e}");
-      }
-    } catch (e) {
-      print("exception:$e");
-    }
+    // try {
+    //   print('---------------------');
+    //   await Stripe.instance.presentPaymentSheet();
+    //   print('---------------------');
+    // } on Exception catch (e) {
+    //   if (e is StripeException) {
+    //     print("Error from Stripe: ${e.error.localizedMessage}");
+    //   } else {
+    //     print("Unforeseen error: ${e}");
+    //   }
+    // } catch (e) {
+    //   print("exception:$e");
+    // }
   }
   createPaymentIntent(BuildContext context,String amount, String currency) async {
     try {

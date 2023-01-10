@@ -127,10 +127,11 @@ class ProductDetails extends StatelessWidget {
                   slugGroup: car!.slugGroup, model: car!.model, year: car!.year, innerColor: car!.innerColor,
                   outerColor: car!.outerColor, seats: car!.seats, oldDailyPrice: car!.oldDailyPrice, dailyPrice: car!.dailyPrice,
                   oldHourlyPrice: car!.oldHourlyPrice, hourlyPrice: car!.hourlyPrice, descriptionEn: car!.descriptionEn,
-                  descriptionAr: car!.descriptionAr, imgs: car!.imgs, metaTitleEn: car!.metaTitleEn,
-                  metaTitleAr: car!.metaTitleAr, metaKeywordsEn: car!.metaKeywordsEn,
-                  metaKeywordsAr: car!.metaKeywordsAr, metaDescriptionEn: car!.metaDescriptionEn,
-                  metaDescriptionAr: car!.metaDescriptionAr, metaImage: car!.metaImage,
+                  descriptionAr: car!.descriptionAr, imgs: car!.imgs,
+                  // metaTitleEn: car!.metaTitleEn,
+                  // metaTitleAr: car!.metaTitleAr, metaKeywordsEn: car!.metaKeywordsEn,
+                  // metaKeywordsAr: car!.metaKeywordsAr, metaDescriptionEn: car!.metaDescriptionEn,
+                  // metaDescriptionAr: car!.metaDescriptionAr, metaImage: car!.metaImage,
                   brands: car!.brandsList!, types: null, bodies: car!.bodies);
               Get.to(() => Book(bookedCar));
             },
